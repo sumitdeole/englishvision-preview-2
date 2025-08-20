@@ -1,86 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>English Vision - Academia de Inglés en Granada</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>English Vision — Academia de Inglés en Tui</title>
   <link rel="stylesheet" href="css/styles.css">
-  <script src="js/site.js" defer></script>
 </head>
 <body>
-  <!-- Include Header here -->
 
-  <main>
-    <section class="hero">
-      <h1>Academia de Inglés para Todas las Edades</h1>
-      <p>En English Vision te ayudamos a mejorar tu inglés con profesores expertos y clases dinámicas. ¡Prepárate para tu examen, avanza en tu carrera o aprende por placer!</p>
-      <a href="contact.html" class="btn cta">¡Reserva tu clase de prueba gratuita!</a>
-    </section>
-    <section class="testimonials">
-      <h2>Testimonios</h2>
-      <blockquote>
-        "Gracias a English Vision, aprobé mi examen Cambridge B2 en solo 6 meses. Los profesores son maravillosos y las clases muy amenas." <br>
-        <b>- María, 17 años</b>
-      </blockquote>
-      <blockquote>
-        "Mi hijo disfruta aprendiendo inglés. El método interactivo funciona muy bien." <br>
-        <b>- Raúl, padre</b>
-      </blockquote>
-      <!-- More testimonials as needed -->
-    </section>
-    <section class="programs">
-      <h2>Nuestros Programas</h2>
-      <div class="program-list">
-        <div><a href="cursos/ninos.html">Niños</a></div>
-        <div><a href="cursos/jovenes.html">Jóvenes</a></div>
-        <div><a href="cursos/adultos.html">Adultos</a></div>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.svg" alt="English Vision" width="40">
+        English Vision
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="about.html">Quienes somos</a>
+        <a href="metodo.html">Metodología</a>
+        <a href="cursos/ninos.html">Cursos</a>
+        <a href="noticias.html">Blog</a>
+        <a href="contact.html">Contacta</a>
+      </nav>
+      <div class="cta">
+        <a href="https://wa.me/34660738519" class="btn" target="_blank">WhatsApp</a>
       </div>
-    </section>
-    <section class="cta-bar">
-      <a href="contact.html" class="btn whatsapp"><span>WhatsApp</span></a>
-      <a href="contact.html" class="btn phone">678 123 456</a>
-      <a href="contact.html" class="btn trial">Clase prueba gratis</a>
-    </section>
-  </main>
-
-<!-- HEADER (INICIO on logo) -->
-<header>
-  <nav class="navbar">
-    <div class="logo">
-      <a href="index.html"><img src="assets/logo.png" alt="English Vision"></a>
     </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Inicio</a></li>
-      <li class="dropdown">
-        <a href="about.html" class="dropbtn">Quienes somos</a>
-        <div class="dropdown-content">
-          <a href="about.html">El equipo</a>
-          <a href="about.html#historia">Historia</a>
-        </div>
-      </li>
-      <li><a href="metodo.html">Método</a></li>
-      <li class="dropdown">
-        <a href="cursos/ninos.html" class="dropbtn">Cursos</a>
-        <div class="dropdown-content">
-          <a href="cursos/ninos.html">Niños</a>
-          <a href="cursos/jovenes.html">Jóvenes</a>
-          <a href="cursos/adultos.html">Adultos</a>
-        </div>
-      </li>
-      <li><a href="noticias.html">Noticias/Blog</a></li>
-      <li><a href="contact.html">Contacto</a></li>
-    </ul>
-    <div class="mobile-menu-toggle" onclick="toggleMenu()"><span>☰</span></div>
-  </nav>
-</header>
+  </header>
 
-<!-- FOOTER  -->
-<footer>
-  <div>
-    <span>&copy; 2025 English Vision Language Center</span> |
-    <a href="contact.html">Contacto</a> |
-    <span>Tel: 678 123 456 · <a href="https://wa.me/34678123456">WhatsApp</a></span>
-  </div>
-</footer>
+  <!-- HERO -->
+  <section class="hero container">
+    <div>
+      <h1>Aprende inglés de forma natural y divertida</h1>
+      <p>Academia en Tui con profes nativos, grupos reducidos y preparación de exámenes Cambridge.</p>
+      <a href="contact.html" class="btn">Prueba gratuita</a>
+      <a href="cursos/ninos.html" class="btn outline">Ver cursos</a>
+    </div>
+    <div>
+      <img src="assets/placeholder.jpg" alt="Estudiantes aprendiendo inglés">
+    </div>
+  </section>
+
+  <!-- COURSES -->
+  <section>
+    <div class="container">
+      <h2>Nuestros cursos</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Niños</h3>
+          <p>Aprendizaje lúdico desde los 3 años.</p>
+        </div>
+        <div class="card">
+          <h3>Jóvenes</h3>
+          <p>ESO, Bachiller y preparación Cambridge.</p>
+        </div>
+        <div class="card">
+          <h3>Adultos</h3>
+          <p>Conversación, negocios y exámenes oficiales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section style="background:#f3f4f6">
+    <div class="container">
+      <h2>Testimonios</h2>
+      <div class="grid grid-3">
+        <div class="testimonial">
+          "Gracias a English Vision aprobé mi B2 en 6 meses."
+        </div>
+        <div class="testimonial">
+          "Las clases me dieron confianza para hablar en el trabajo."
+        </div>
+        <div class="testimonial">
+          "Mi hijo ahora disfruta aprendiendo inglés cada semana."
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section>
+    <div class="container">
+      <h2>Precios</h2>
+      <div class="pricing">
+        <div class="price-card">
+          <h3>Clase individual</h3>
+          <p><strong>25€/hora</strong></p>
+        </div>
+        <div class="price-card">
+          <h3>Grupo reducido</h3>
+          <p><strong>50€/mes</strong></p>
+        </div>
+        <div class="price-card">
+          <h3>Prueba gratuita</h3>
+          <p>1 clase sin compromiso</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 English Vision · Tui, Pontevedra</p>
+  </footer>
 
 </body>
 </html>
