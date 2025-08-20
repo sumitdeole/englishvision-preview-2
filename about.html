@@ -1,34 +1,173 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Sobre Nosotros | English Vision</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/site.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conoce English Vision - Nuestra historia, profesores y método de enseñanza del inglés.">
+    <title>Sobre Nosotros - English Vision</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <!-- Include Header here -->
+    <!-- Header (same as index.html) -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="English Vision Logo">
+                    <span>English Vision</span>
+                </a>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="cursos/ninos.html">Cursos</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="cursos/ninos.html">Para Niños</a></li>
+                            <li><a href="cursos/jovenes.html">Para Jóvenes</a></li>
+                            <li><a href="cursos/adultos.html">Para Adultos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="metodo.html">Método</a></li>
+                    <li><a href="about.html" class="active">Nosotros</a></li>
+                    <li><a href="noticias.html">Noticias</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="https://wa.me/34600000000" class="btn btn-whatsapp">WhatsApp</a>
+                </div>
+            </nav>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
 
-  <main>
-    <h1>Sobre English Vision</h1>
-    <section>
-      <h2>El equipo</h2>
-      <p>Contamos con profesores nativos y titulados, apasionados por la enseñanza y el aprendizaje.</p>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Sobre Nosotros</h1>
+            <p>Conoce nuestra historia, equipo y filosofía de enseñanza</p>
+        </div>
     </section>
-    <section id="historia">
-      <h2>Nuestra historia</h2>
-      <p>Fundada en Granada en 2015, English Vision ha ayudado a cientos de estudiantes a lograr sus metas de inglés.</p>
-    </section>
-    <section>
-      <h2>Valores</h2>
-      <ul>
-        <li>Profesionalidad y cercanía</li>
-        <li>Enfoque personalizado</li>
-        <li>Compromiso con el aprendizaje</li>
-      </ul>
-    </section>
-  </main>
 
-  <!-- Include Footer here -->
+    <!-- About Content -->
+    <section class="about-content">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Nuestra Historia</h2>
+                    <p>English Vision nació en 2010 con el objetivo de ofrecer una enseñanza de inglés de calidad, centrada en las necesidades reales de comunicación de nuestros estudiantes. Desde entonces, hemos ayudado a miles de alumnos a alcanzar sus objetivos lingüísticos.</p>
+                    
+                    <h2>Nuestra Misión</h2>
+                    <p>Creemos que aprender inglés debe ser una experiencia enriquecedora, práctica y accesible para todos. Por eso, nos esforzamos cada día por crear un ambiente de aprendizaje positivo donde los estudiantes se sientan motivados y apoyados.</p>
+                    
+                    <h2>Nuestro Equipo</h2>
+                    <p>Contamos con un equipo de profesores nativos y bilingües altamente cualificados y con amplia experiencia en la enseñanza del inglés. Todos nuestros profesores comparten la pasión por ayudar a los estudiantes a alcanzar su máximo potencial.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://placehold.co/500x600/2b7cff/ffffff?text=Equipo+English+Vision" alt="Nuestro equipo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat">
+                    <h3>13+</h3>
+                    <p>Años de experiencia</p>
+                </div>
+                <div class="stat">
+                    <h3>2000+</h3>
+                    <p>Estudiantes satisfechos</p>
+                </div>
+                <div class="stat">
+                    <h3>98%</h3>
+                    <p>de aprobados en exámenes Cambridge</p>
+                </div>
+                <div class="stat">
+                    <h3>8</h3>
+                    <p>Profesores cualificados</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Quieres conocernos personalmente?</h2>
+                <p>Ven a visitarnos y te explicaremos todo sobre nuestros cursos y método de enseñanza.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Solicitar información</a>
+                    <a href="https://wa.me/34600000000" class="btn btn-secondary">Contactar por WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="assets/logo.png" alt="English Vision Logo">
+                            <span>English Vision</span>
+                        </a>
+                    </div>
+                    <p>La mejor academia de inglés para niños, jóvenes y adultos. Preparación de exámenes Cambridge.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><span>FB</span></a>
+                        <a href="#" aria-label="Instagram"><span>IG</span></a>
+                        <a href="#" aria-label="Twitter"><span>TW</span></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Cursos</h3>
+                    <ul>
+                        <li><a href="cursos/ninos.html">Inglés para Niños</a></li>
+                        <li><a href="cursos/jovenes.html">Inglés para Jóvenes</a></li>
+                        <li><a href="cursos/adultos.html">Inglés para Adultos</a></li>
+                        <li><a href="cursos/jovenes.html">Preparación Cambridge</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Enlaces</h3>
+                    <ul>
+                        <li><a href="about.html">Sobre nosotros</a></li>
+                        <li><a href="metodo.html">Nuestro método</a></li>
+                        <li><a href="noticias.html">Noticias</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li>📍 Calle Ejemplo, 123, Ciudad</li>
+                        <li>📞 +34 600 000 000</li>
+                        <li>✉️ info@englishvision.es</li>
+                        <li><a href="https://wa.me/34600000000" class="whatsapp-link">💬 WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 English Vision. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/site.js"></script>
 </body>
 </html>
