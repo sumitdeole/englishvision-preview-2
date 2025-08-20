@@ -1,111 +1,220 @@
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>English Vision — Academia de Inglés en Tui</title>
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">
-        <img src="assets/logo.svg" alt="English Vision" width="40">
-        English Vision
-      </a>
-      <nav class="nav">
-        <a href="index.html" class="active">Inicio</a>
-        <a href="about.html">Quienes somos</a>
-        <a href="metodo.html">Metodología</a>
-        <a href="cursos/ninos.html">Cursos</a>
-        <a href="noticias.html">Blog</a>
-        <a href="contact.html">Contacta</a>
-      </nav>
-      <div class="cta">
-        <a href="https://wa.me/34660738519" class="btn" target="_blank">WhatsApp</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero container">
-    <div>
-      <h1>Aprende inglés de forma natural y divertida</h1>
-      <p>Academia en Tui con profes nativos, grupos reducidos y preparación de exámenes Cambridge.</p>
-      <a href="contact.html" class="btn">Prueba gratuita</a>
-      <a href="cursos/ninos.html" class="btn outline">Ver cursos</a>
-    </div>
-    <div>
-      <img src="assets/placeholder.jpg" alt="Estudiantes aprendiendo inglés">
-    </div>
-  </section>
-
-  <!-- COURSES -->
-  <section>
+<!-- Header -->
+<header class="header" id="header">
     <div class="container">
-      <h2>Nuestros cursos</h2>
-      <div class="grid grid-3">
-        <div class="card">
-          <h3>Niños</h3>
-          <p>Aprendizaje lúdico desde los 3 años.</p>
-        </div>
-        <div class="card">
-          <h3>Jóvenes</h3>
-          <p>ESO, Bachiller y preparación Cambridge.</p>
-        </div>
-        <div class="card">
-          <h3>Adultos</h3>
-          <p>Conversación, negocios y exámenes oficiales.</p>
-        </div>
-      </div>
+        <nav class="nav">
+            <a href="#" class="logo">
+                <div class="logo-icon">👁</div>
+                English Vision
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#cursos">Cursos</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            
+            <div class="header-cta">
+                <a href="https://wa.me/34XXXXXXXXX?text=Hola,%20quiero%20información%20sobre%20los%20cursos%20de%20inglés" class="btn btn-whatsapp">
+                    💬 WhatsApp
+                </a>
+                <a href="#contacto" class="btn btn-primary">
+                    Clase Gratis
+                </a>
+            </div>
+        </nav>
     </div>
-  </section>
+</header>
 
-  <!-- TESTIMONIALS -->
-  <section style="background:#f3f4f6">
+<!-- Hero Section -->
+<section id="inicio" class="hero">
     <div class="container">
-      <h2>Testimonios</h2>
-      <div class="grid grid-3">
-        <div class="testimonial">
-          "Gracias a English Vision aprobé mi B2 en 6 meses."
+        <div class="hero-content">
+            <h1 class="h1">Aprende Inglés en Tui con Profesores Nativos</h1>
+            <p class="hero-subtitle">
+                Centro especializado con método comunicativo y grupos reducidos. 
+                <strong>¡Tu primera clase es completamente gratis!</strong>
+            </p>
+            <div class="hero-cta">
+                <a href="#contacto" class="btn btn-primary btn-lg">
+                    🎯 Reservar Clase Gratis
+                </a>
+                <a href="https://wa.me/34XXXXXXXXX?text=Hola,%20quiero%20información%20sobre%20cursos%20de%20inglés" class="btn btn-secondary btn-lg">
+                    💬 Consultar WhatsApp
+                </a>
+            </div>
         </div>
-        <div class="testimonial">
-          "Las clases me dieron confianza para hablar en el trabajo."
-        </div>
-        <div class="testimonial">
-          "Mi hijo ahora disfruta aprendiendo inglés cada semana."
-        </div>
-      </div>
     </div>
-  </section>
+</section>
 
-  <!-- PRICING -->
-  <section>
+<!-- Trust Section -->
+<section class="trust-section">
     <div class="container">
-      <h2>Precios</h2>
-      <div class="pricing">
-        <div class="price-card">
-          <h3>Clase individual</h3>
-          <p><strong>25€/hora</strong></p>
+        <div class="trust-grid">
+            <div class="trust-item">
+                <span class="trust-number">15+</span>
+                <span class="trust-label">Años de Experiencia</span>
+            </div>
+            <div class="trust-item">
+                <span class="trust-number">500+</span>
+                <span class="trust-label">Alumnos Satisfechos</span>
+            </div>
+            <div class="trust-item">
+                <span class="trust-number">95%</span>
+                <span class="trust-label">Éxito en Exámenes</span>
+            </div>
+            <div class="trust-item">
+                <span class="trust-number">100%</span>
+                <span class="trust-label">Profesores Nativos</span>
+            </div>
         </div>
-        <div class="price-card">
-          <h3>Grupo reducido</h3>
-          <p><strong>50€/mes</strong></p>
-        </div>
-        <div class="price-card">
-          <h3>Prueba gratuita</h3>
-          <p>1 clase sin compromiso</p>
-        </div>
-      </div>
     </div>
-  </section>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 English Vision · Tui, Pontevedra</p>
-  </footer>
+<!-- Courses Section -->
+<section id="cursos" class="section courses-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="h2 section-title">Nuestros Cursos de Inglés</h2>
+            <p class="section-subtitle">
+                Programas especializados para todas las edades y objetivos en Tui y comarca
+            </p>
+        </div>
 
-</body>
-</html>
+        <div class="grid grid-2">
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-icon">👶</span>
+                    <h3 class="course-title">Inglés para Niños</h3>
+                    <p class="course-subtitle">4-12 años</p>
+                </div>
+                <div class="course-body">
+                    <ul class="course-features">
+                        <li>Aprendizaje a través de juegos y actividades</li>
+                        <li>Grupos reducidos (máximo 6 niños)</li>
+                        <li>2 horas semanales</li>
+                        <li>Desarrollo de confianza y fluidez</li>
+                        <li>Método divertido y natural</li>
+                    </ul>
+                    <div class="course-price">Desde 60€/mes</div>
+                    <a href="#contacto" class="btn btn-primary" style="width: 100%;">Más Información</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-icon">🎯</span>
+                    <h3 class="course-title">Inglés para Adultos</h3>
+                    <p class="course-subtitle">Todos los niveles A1-C2</p>
+                </div>
+                <div class="course-body">
+                    <ul class="course-features">
+                        <li>Desde principiante hasta avanzado</li>
+                        <li>Horarios flexibles mañana y tarde</li>
+                        <li>Enfoque comunicativo y práctico</li>
+                        <li>Grupos pequeños personalizados</li>
+                        <li>Preparación Cambridge e IELTS</li>
+                    </ul>
+                    <div class="course-price">Desde 70€/mes</div>
+                    <a href="#contacto" class="btn btn-primary" style="width: 100%;">Más Información</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-icon">💼</span>
+                    <h3 class="course-title">Inglés de Negocios</h3>
+                    <p class="course-subtitle">Profesional y empresarial</p>
+                </div>
+                <div class="course-body">
+                    <ul class="course-features">
+                        <li>Vocabulario y terminología profesional</li>
+                        <li>Presentaciones y reuniones efectivas</li>
+                        <li>Comunicación escrita empresarial</li>
+                        <li>Networking y negociación</li>
+                        <li>Certificación reconocida</li>
+                    </ul>
+                    <div class="course-price">Desde 90€/mes</div>
+                    <a href="#contacto" class="btn btn-primary" style="width: 100%;">Más Información</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-icon">📜</span>
+                    <h3 class="course-title">Preparación Exámenes</h3>
+                    <p class="course-subtitle">Cambridge, IELTS, Trinity</p>
+                </div>
+                <div class="course-body">
+                    <ul class="course-features">
+                        <li>Cambridge A2, B1, B2, C1, C2</li>
+                        <li>IELTS Academic y General</li>
+                        <li>Trinity College London</li>
+                        <li>Simulacros de examen reales</li>
+                        <li>95% tasa de éxito comprobada</li>
+                    </ul>
+                    <div class="course-price">Desde 80€/mes</div>
+                    <a href="#contacto" class="btn btn-primary" style="width: 100%;">Más Información</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonios" class="section testimonials-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="h2 section-title">Historias de Éxito Reales</h2>
+            <p class="section-subtitle">
+                Descubre por qué somos la academia de inglés más valorada en Tui
+            </p>
+        </div>
+
+        <div class="grid grid-3">
+            <div class="testimonial-card">
+                <div class="testimonial-quote">
+                    "Gracias a English Vision aprobé mi examen Cambridge B2 en solo 6 meses. Los profesores nativos son increíbles y hacen que las clases sean súper divertidas. Lo recomiendo 100%."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">M</div>
+                    <div class="author-info">
+                        <h4>María González</h4>
+                        <p>Estudiante, 17 años • B2 Cambridge</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-quote">
+                    "Como empresario necesitaba mejorar mi inglés para clientes internacionales. El curso de Business English me ayudó muchísimo. Ahora me siento seguro en cualquier reunión."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">J</div>
+                    <div class="author-info">
+                        <h4>José Luis Ramos</h4>
+                        <p>Empresario, 42 años • Business English</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-quote">
+                    "Mi hija de 8 años adora ir a las clases de inglés. Los profesores nativos consiguen que aprenda jugando. Su pronunciación ha mejorado increíblemente en pocos meses."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">A</div>
+                    <div class="author-info">
+                        <h4>Ana Martín</h4>
+                        <p>Madre de estudiante • Curso Infantil</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/34XXXXXXXXX?text=Hola,%20quiero%20información%20sobre%20los%20cursos%20de%20inglés" class="whatsapp-float">
+    💬
+</a>
