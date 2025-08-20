@@ -1,30 +1,189 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Contacta | English Vision</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/site.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacta con English Vision - Academia de inglés. Reserva tu clase de prueba gratuita.">
+    <title>Contacto - English Vision</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <!-- Include Header here -->
+    <!-- Header (same as index.html) -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="English Vision Logo">
+                    <span>English Vision</span>
+                </a>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="cursos/ninos.html">Cursos</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="cursos/ninos.html">Para Niños</a></li>
+                            <li><a href="cursos/jovenes.html">Para Jóvenes</a></li>
+                            <li><a href="cursos/adultos.html">Para Adultos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="metodo.html">Método</a></li>
+                    <li><a href="about.html">Nosotros</a></li>
+                    <li><a href="noticias.html">Noticias</a></li>
+                    <li><a href="contact.html" class="active">Contacto</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="https://wa.me/34600000000" class="btn btn-whatsapp">WhatsApp</a>
+                </div>
+            </nav>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
 
-  <main>
-    <h1>Contacto</h1>
-    <form>
-      <label for="name">Nombre:</label>
-      <input type="text" id="name" name="name">
-      <label for="email">Correo electrónico:</label>
-      <input type="email" id="email" name="email">
-      <label for="message">Mensaje:</label>
-      <textarea id="message" name="message"></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-    <p>Teléfono: <b>678 123 456</b></p>
-    <p>WhatsApp: <a href="https://wa.me/34678123456">Enviar mensaje</a></p>
-    <a href="contact.html" class="btn trial">¡Clase de prueba gratis!</a>
-  </main>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contacto</h1>
+            <p>Estamos aquí para ayudarte. Reserva tu clase de prueba gratuita.</p>
+        </div>
+    </section>
 
-  <!-- Include Footer here -->
+    <!-- Contact Form -->
+    <section class="contact-form">
+        <div class="container">
+            <div class="form-grid">
+                <div class="form-content">
+                    <h2>Envíanos un mensaje</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nombre completo *</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="course">Curso de interés</label>
+                            <select id="course" class="form-control">
+                                <option value="">Selecciona una opción</option>
+                                <option value="ninos">Inglés para Niños</option>
+                                <option value="jovenes">Inglés para Jóvenes</option>
+                                <option value="adultos">Inglés para Adultos</option>
+                                <option value="cambridge">Preparación Cambridge</option>
+                                <option value="otros">Otros</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje *</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Información de contacto</h3>
+                    <div class="contact-details">
+                        <p>📍 <strong>Dirección:</strong> Calle Ejemplo, 123, 28001 Madrid</p>
+                        <p>📞 <strong>Teléfono:</strong> +34 600 000 000</p>
+                        <p>✉️ <strong>Email:</strong> info@englishvision.es</p>
+                        <p>💬 <strong>WhatsApp:</strong> <a href="https://wa.me/34600000000">+34 600 000 000</a></p>
+                    </div>
+                    
+                    <h3>Horario de atención</h3>
+                    <div class="contact-details">
+                        <p><strong>Lunes a Viernes:</strong> 9:00 - 14:00 / 16:00 - 20:00</p>
+                        <p><strong>Sábados:</strong> 10:00 - 14:00</p>
+                        <p><strong>Domingos:</strong> Cerrado</p>
+                    </div>
+                    
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.475317997558!2d-3.703790384603995!3d40.41962997936438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42287e23931ee5%3A0x5c5f5e5e5e5e5e5e!2sPuerta%20del%20Sol%2C%20Madrid!5e0!3m2!1ses!2ses!4v1633456789012!5m2!1ses!2ses" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Prefieres contactarnos directamente?</h2>
+                <p>Llámanos o escríbenos por WhatsApp para una respuesta inmediata.</p>
+                <div class="cta-buttons">
+                    <a href="tel:+34600000000" class="btn btn-primary">Llamar ahora</a>
+                    <a href="https://wa.me/34600000000" class="btn btn-secondary">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="assets/logo.png" alt="English Vision Logo">
+                            <span>English Vision</span>
+                        </a>
+                    </div>
+                    <p>La mejor academia de inglés para niños, jóvenes y adultos. Preparación de exámenes Cambridge.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><span>FB</span></a>
+                        <a href="#" aria-label="Instagram"><span>IG</span></a>
+                        <a href="#" aria-label="Twitter"><span>TW</span></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Cursos</h3>
+                    <ul>
+                        <li><a href="cursos/ninos.html">Inglés para Niños</a></li>
+                        <li><a href="cursos/jovenes.html">Inglés para Jóvenes</a></li>
+                        <li><a href="cursos/adultos.html">Inglés para Adultos</a></li>
+                        <li><a href="cursos/jovenes.html">Preparación Cambridge</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Enlaces</h3>
+                    <ul>
+                        <li><a href="about.html">Sobre nosotros</a></li>
+                        <li><a href="metodo.html">Nuestro método</a></li>
+                        <li><a href="noticias.html">Noticias</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li>📍 Calle Ejemplo, 123, Ciudad</li>
+                        <li>📞 +34 600 000 000</li>
+                        <li>✉️ info@englishvision.es</li>
+                        <li><a href="https://wa.me/34600000000" class="whatsapp-link">💬 WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 English Vision. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/site.js"></script>
 </body>
 </html>
