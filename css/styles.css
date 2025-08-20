@@ -1,0 +1,84 @@
+/* Shared site styles for English Vision */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  background: #f8f9fa;
+  color: #222;
+}
+header, footer {
+  background: #2b6fb6;
+  color: #fff;
+  padding: 16px;
+}
+nav.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo img { height: 48px; }
+ul.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+ul.nav-links li {
+  margin: 0 12px;
+  position: relative;
+}
+ul.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px;
+  font-weight: 500;
+}
+.nav-links .dropdown:hover .dropdown-content,
+.nav-links .dropdown:focus .dropdown-content {
+  display: block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: #1b4775;
+  min-width: 160px;
+  z-index: 100;
+}
+.dropdown-content a {
+  color: #fff;
+  padding: 10px 16px;
+  display: block;
+}
+.btn {
+  background: #2b6fb6;
+  color: #fff;
+  padding: 10px 24px;
+  text-decoration: none;
+  border-radius: 4px;
+  margin: 8px 0;
+  display: inline-block;
+  font-weight: bold;
+}
+.btn.whatsapp { background: #25d366; }
+.btn.phone { background: #2b6fb6; }
+.btn.trial { background: #eab308; color:#222;}
+.hero {
+  padding: 40px 20px;
+  background: linear-gradient(90deg,#2b6fb6 70%,#7bccec 100%);
+  color: #fff;
+  text-align: left;
+}
+.testimonials blockquote {
+  padding: 16px;
+  background: #fff;
+  color: #222;
+  border-left: 5px solid #2b6fb6;
+  margin: 16px 0;
+}
+footer { text-align: center; font-size: 14px; }
+@media (max-width: 800px) {
+  ul.nav-links { flex-direction: column; }
+  .navbar { flex-direction: column;}
+  .logo { margin-bottom: 10px;}
+}
+.mobile-menu-toggle { display: none; }
+/* Add more styles as needed for forms, sections, buttons */
