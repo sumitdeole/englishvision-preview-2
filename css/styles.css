@@ -229,11 +229,13 @@ img {
 /* Hero Section */
 .hero {
     padding: 8rem 0 4rem;
+    width: 100%;
     background: linear-gradient(135deg, #f5f7ff 0%, #e3ebff 100%);
 }
 
 .hero .container {
     display: grid;
+    max-width: 90%;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: center;
@@ -260,6 +262,30 @@ img {
     border-radius: 10px;
     box-shadow: var(--shadow);
 }
+
+.hero-image.hero-slider {
+  position: relative;
+  overflow: hidden;
+  /* make it slightly larger: e.g. */
+  height: 500px; /* or max-height */
+}
+
+.hero-image.hero-slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Optionally, show the first image initially */
+.hero-image.hero-slider img:first-child {
+  opacity: 1;
+}
+
 
 /* Features Section */
 .features {

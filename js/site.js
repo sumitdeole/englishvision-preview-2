@@ -122,3 +122,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+const slides = document.querySelectorAll('.hero-slider img');
+let current = 0;
+
+function nextSlide() {
+  slides[current].style.opacity = '0';
+  current = (current + 1) % slides.length;
+  slides[current].style.opacity = '1';
+}
+
+setInterval(nextSlide, 5000); // change every 5 seconds
