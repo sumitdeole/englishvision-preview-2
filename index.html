@@ -7,6 +7,20 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+            .lang-switcher {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+      cursor: pointer;
+    }
+    .lang-switcher img {
+      width: 28px;
+      height: 20px;
+      object-fit: cover;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      margin-left: 10px;
+    }
         * {
             margin: 0;
             padding: 0;
@@ -1001,6 +1015,9 @@
                 font-size: 1.8rem;
             }
         }
+        .hero-content a {
+  margin-right: 30px; /* space between buttons */
+}
     </style>
 </head>
 <body>
@@ -1026,10 +1043,11 @@
                         <li><a href="#contact">Contacto</a></li>
                     </ul>
                 </nav>
-                            <!-- WhatsApp Button -->
-            <a href="https://wa.me/34123456789" class="whatsapp-button" target="_blank">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
+
+                    <!-- Language Switcher -->
+        <div class="lang-switcher">
+          <img id="lang-flag" src="https://flagcdn.com/es.svg" alt="ES" title="Español" />
+        </div>
             </div>
         </div>
     </header>
@@ -1045,6 +1063,10 @@
                         <i class="fas fa-rocket"></i>
                         ¡Comienza Tu Viaje Ahora!
                     </a>
+                    <!-- WhatsApp Button -->
+            <a href="https://wa.me/34123456789" class="whatsapp-button" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
                 </div>
             </div>
         </section>
@@ -1779,5 +1801,61 @@
             }
         });
     </script>
+
+  <script>
+    const translations = {
+      es: {
+        logo: "English Vision",
+        navInicio: "Inicio",
+        navCursos: "Cursos",
+        navNiveles: "Niveles",
+        navBlog: "Blog",
+        navContacto: "Contacto",
+        homeTitle: "Bienvenido a English Vision",
+        homeText: "Aprende inglés de manera fácil y divertida."
+      },
+      en: {
+        logo: "English Vision",
+        navInicio: "Home",
+        navCursos: "Courses",
+        navNiveles: "Levels",
+        navBlog: "Blog",
+        navContacto: "Contact",
+        homeTitle: "Welcome to English Vision",
+        homeText: "Learn English in a fun and easy way."
+      }
+    };
+
+    let currentLang = sessionStorage.getItem("lang") || "es";
+    const flagEl = document.getElementById("lang-flag");
+
+    function applyTranslations() {
+      document.documentElement.lang = currentLang;
+      document.querySelectorAll("[data-translate]").forEach(el => {
+        const key = el.getAttribute("data-translate");
+        el.textContent = translations[currentLang][key];
+      });
+
+      // Set flag
+      if (currentLang === "es") {
+        flagEl.src = "https://flagcdn.com/es.svg";
+        flagEl.alt = "ES";
+        flagEl.title = "Español";
+      } else {
+        flagEl.src = "https://flagcdn.com/gb.svg";
+        flagEl.alt = "EN";
+        flagEl.title = "English";
+      }
+    }
+
+    flagEl.addEventListener("click", () => {
+      currentLang = currentLang === "es" ? "en" : "es";
+      sessionStorage.setItem("lang", currentLang);
+      applyTranslations();
+    });
+
+    applyTranslations();
+  </script>
+
 </body>
 </html>
