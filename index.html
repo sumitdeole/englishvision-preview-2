@@ -3,252 +3,1521 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="English Vision - Academia de inglés en España. Clases para niños, jóvenes y adultos. Preparación exámenes Cambridge.">
-    <meta name="keywords" content="academia inglés, clases inglés, Cambridge, niños inglés, aprender inglés">
-    <meta name="author" content="English Vision">
-    <title>English Vision - Academia de Inglés</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <title>English Vision - Aprende Inglés con Confianza</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: #0f0f23;
+        }
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c, #4facfe, #00f2fe);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            z-index: -2;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Glass morphism container */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .logo i {
+            font-size: 32px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        /* UPDATED: Navigation styling without colored background */
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #667eea;
+            transform: translateY(-3px);
+        }
+
+        /* Main content */
+        main {
+            margin-top: 80px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding: 100px 0;
+        }
+
+        .hero-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            padding: 60px 40px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            animation: heroFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes heroFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: textGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes textGlow {
+            from { filter: brightness(1); }
+            to { filter: brightness(1.2); }
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 15px 35px rgba(245, 87, 108, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+
+        .cta-button:hover::before {
+            left: 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(245, 87, 108, 0.6);
+        }
+
+        .cta-button i {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        /* Slideshow Section */
+        .slideshow-section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .slideshow-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+            height: 400px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8));
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide-content {
+            padding: 40px;
+            color: white;
+        }
+
+        .slide h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .slide p {
+            font-size: 1.3rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .slide-nav {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+        }
+
+        .slide-dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .slide-dot.active {
+            background: white;
+            transform: scale(1.3);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4);
+        }
+
+        .slide-dot:hover {
+            background: rgba(255, 255, 255, 0.8);
+            transform: scale(1.1);
+        }
+
+        /* Tabs Section */
+        .tabs-section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.3rem;
+            margin-bottom: 60px;
+            font-weight: 400;
+        }
+
+        .tabs-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .tab-buttons {
+            display: flex;
+            background: rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 25px 20px;
+            border: none;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            min-width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .tab-button::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .tab-button.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .tab-button.active::before {
+            transform: scaleX(1);
+        }
+
+        .tab-button:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.9);
+            transform: translateY(-3px);
+        }
+
+        .tab-button i {
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+
+        .tab-button:hover i {
+            transform: scale(1.2);
+        }
+
+        .tab-content {
+            padding: 50px;
+            min-height: 500px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .tab-pane {
+            display: none;
+            animation: tabFadeIn 0.5s ease-in-out;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        @keyframes tabFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Feature Cards */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+
+        .feature-card:hover::before {
+            left: 0;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            box-shadow: 0 15px 30px rgba(240, 147, 251, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 20px 40px rgba(240, 147, 251, 0.6);
+        }
+
+        .feature-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: white;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        /* Level Cards */
+        .level-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .level-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .level-card:hover {
+            transform: scale(1.05) rotateY(5deg);
+            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.4);
+        }
+
+        .level-header {
+            padding: 40px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .level-header::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 20px solid #00f2fe;
+        }
+
+        .level-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .level-subtitle {
+            opacity: 0.9;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .level-body {
+            padding: 40px;
+            color: white;
+        }
+
+        .level-body p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .level-body ul {
+            padding-left: 20px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .level-body li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        .level-body li::before {
+            content: '✨';
+            position: absolute;
+            left: -25px;
+        }
+
+        /* NEW: Blog Section */
+        .blog-section {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .blog-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.4);
+        }
+
+        .blog-image {
+            height: 200px;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .blog-content {
+            padding: 30px;
+        }
+
+        .blog-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: white;
+            font-weight: 700;
+        }
+
+        .blog-content p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #4facfe;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: #00f2fe;
+            transform: translateX(5px);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+
+        .contact-card:hover::before {
+            left: 0;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 25px;
+            box-shadow: 0 15px 30px rgba(79, 172, 254, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover .contact-icon {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 20px 40px rgba(79, 172, 254, 0.6);
+        }
+
+        .contact-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: white;
+            font-weight: 700;
+        }
+
+        .contact-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .whatsapp-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            margin-top: 15px;
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(20px);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 100px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 700;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .footer-section a:hover {
+            color: #f093fb;
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .tab-buttons {
+                flex-direction: column;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-content {
+                padding: 40px 20px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        /* Scroll animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+    
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+
+    <header>
         <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="assets/logo.png" alt="English Vision Logo">
-                    <span>English Vision</span>
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    English Vision
                 </a>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#courses">Cursos</a></li>
+                        <li><a href="#levels">Niveles</a></li>
+                        <li><a href="#blog">Blog</a></li> <!-- Updated: Changed from Práctica to Blog -->
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li class="dropdown">
-                        <a href="cursos/ninos.html">Cursos</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="cursos/ninos.html">Para Niños</a></li>
-                            <li><a href="cursos/jovenes.html">Para Jóvenes</a></li>
-                            <li><a href="cursos/adultos.html">Para Adultos</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="metodo.html">Método</a></li>
-                    <li><a href="about.html">Nosotros</a></li>
-                    <li><a href="noticias.html">Noticias</a></li>
-                    <li><a href="contact.html">Contacto</a></li>
-                </ul>
-                <div class="nav-cta">
-                    <a href="https://wa.me/34600000000" class="btn btn-whatsapp">WhatsApp</a>
-                </div>
-            </nav>
-            <button class="hamburger" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Aprende inglés con profesionales</h1>
-                <p>Clases para niños, jóvenes y adultos. Preparación de exámenes Cambridge con profesores nativos y titulados.</p>
-                <div class="hero-buttons">
-                    <a href="contact.html" class="btn btn-primary">Reserva tu clase de prueba gratuita</a>
-                    <a href="https://wa.me/34600000000" class="btn btn-secondary">Contacta por WhatsApp</a>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>🚀 Domina el Inglés con Confianza</h1>
+                    <p>Únete a miles de estudiantes que han transformado sus habilidades en inglés con nuestra plataforma de aprendizaje interactiva de vanguardia</p>
+                    <a href="#courses" class="cta-button">
+                        <i class="fas fa-rocket"></i>
+                        ¡Comienza Tu Viaje Ahora!
+                    </a>
                 </div>
             </div>
-            <div class="hero-image hero-slider">
-                <img src="assets/hero-bg.jpg" alt="…">
-                <img src="assets/hero-bg3.jpg" alt="…">
-                <img src="assets/hero-bg2.png" alt="…">
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <h2>¿Por qué elegir English Vision?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">👨‍🏫</div>
-                    <h3>Profesores nativos</h3>
-                    <p>Nuestros profesores son nativos o bilingües con titulación específica para la enseñanza del inglés.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Método efectivo</h3>
-                    <p>Enfoque comunicativo que prioriza la conversación y la comprensión auditiva desde el primer día.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Preparación de exámenes</h3>
-                    <p>Especialistas en preparación para exámenes oficiales Cambridge: KET, PET, FCE, CAE y CPE.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">👪</div>
-                    <h3>Grupos reducidos</h3>
-                    <p>Máximo 8 alumnos por clase para garantizar una enseñanza personalizada y de calidad.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Courses Preview -->
-    <section class="courses-preview">
-        <div class="container">
-            <h2>Nuestros Cursos</h2>
-            <div class="courses-grid">
-                <div class="course-card">
-                    <div class="course-image">
-                        <img src="https://placehold.co/400x300/2b7cff/ffffff?text=Niños" alt="Curso para niños">
+        <!-- Slideshow Section -->
+        <section class="slideshow-section">
+            <div class="container">
+                <div class="slideshow-container">
+                    <div class="slide active">
+                        <div class="slide-content">
+                            <h2>🎯 Aprendizaje con IA</h2>
+                            <p>Experimenta una educación personalizada que se adapta a tu estilo de aprendizaje único y ritmo</p>
+                        </div>
                     </div>
-                    <div class="course-content">
-                        <h3>Inglés para Niños</h3>
-                        <p>Aprendizaje divertido y natural a través de juegos, canciones y actividades interactivas.</p>
-                        <a href="cursos/ninos.html" class="btn btn-outline">Más información</a>
+                    <div class="slide">
+                        <div class="slide-content">
+                            <h2>🗣️ Conversaciones Reales</h2>
+                            <p>Practica con hablantes nativos y tutores de IA para una experiencia de speaking auténtica</p>
+                        </div>
                     </div>
-                </div>
-                <div class="course-card">
-                    <div class="course-image">
-                        <img src="https://placehold.co/400x300/2b7cff/ffffff?text=Jóvenes" alt="Curso para jóvenes">
+                    <div class="slide">
+                        <div class="slide-content">
+                            <h2>📚 Contenido Inmersivo</h2>
+                            <p>Aprende a través de películas, música, noticias e historias interactivas que te mantienen comprometido</p>
+                        </div>
                     </div>
-                    <div class="course-content">
-                        <h3>Inglés para Jóvenes</h3>
-                        <p>Preparación específica para exámenes Cambridge con enfoque en las necesidades adolescentes.</p>
-                        <a href="cursos/jovenes.html" class="btn btn-outline">Más información</a>
+                    <div class="slide">
+                        <div class="slide-content">
+                            <h2>🏆 Seguimiento del Éxito</h2>
+                            <p>Celebra tu progreso con análisis detallados y insignias de logros</p>
+                        </div>
                     </div>
-                </div>
-                <div class="course-card">
-                    <div class="course-image">
-                        <img src="https://placehold.co/400x300/2b7cff/ffffff?text=Adultos" alt="Curso para adultos">
-                    </div>
-                    <div class="course-content">
-                        <h3>Inglés para Adultos</h3>
-                        <p>Clases prácticas para mejorar tu inglés profesional o prepararte para certificaciones oficiales.</p>
-                        <a href="cursos/adultos.html" class="btn btn-outline">Más información</a>
+                    <div class="slide-nav">
+                        <div class="slide-dot active" onclick="currentSlide(1)"></div>
+                        <div class="slide-dot" onclick="currentSlide(2)"></div>
+                        <div class="slide-dot" onclick="currentSlide(3)"></div>
+                        <div class="slide-dot" onclick="currentSlide(4)"></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <h2>Lo que dicen nuestros estudiantes</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Mi hija ha mejorado notablemente su inglés en solo tres meses. Los profesores son fantásticos y se preocupan por cada alumno."</p>
+        <!-- Tabs Section -->
+        <section class="tabs-section" id="courses">
+            <div class="container">
+                <h2 class="section-title">🌟 Explora Aventuras de Aprendizaje</h2>
+                <p class="section-subtitle">Descubre formas emocionantes de dominar el inglés a través de experiencias interactivas</p>
+                
+                <div class="tabs-container">
+                    <div class="tab-buttons">
+                        <button class="tab-button active" onclick="showTab('grammar')">
+                            <i class="fas fa-magic"></i>
+                            Gramática
+                        </button>
+                        <button class="tab-button" onclick="showTab('vocabulary')">
+                            <i class="fas fa-brain"></i>
+                            Vocabulario
+                        </button>
+                        <button class="tab-button" onclick="showTab('speaking')">
+                            <i class="fas fa-microphone-alt"></i>
+                            Speaking
+                        </button>
+                        <button class="tab-button" onclick="showTab('writing')">
+                            <i class="fas fa-feather-alt"></i>
+                            Writing
+                        </button>
+                        <button class="tab-button" onclick="showTab('listening')">
+                            <i class="fas fa-headphones-alt"></i>
+                            Listening
+                        </button>
                     </div>
-                    <div class="testimonial-author">
-                        <img src="assets/testimonial-1.jpg" alt="María López">
-                        <div>
-                            <h4>María López</h4>
-                            <p>Madre de alumna</p>
+                    
+                    <div class="tab-content">
+                        <div id="grammar" class="tab-pane active">
+                            <div class="feature-grid">
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-wand-magic-sparkles"></i>
+                                    </div>
+                                    <h3>🎭 Juegos Interactivos de Gramática</h3>
+                                    <p>¡Transforma las aburridas reglas gramaticales en aventuras emocionantes! Juega a ser detective con estructuras de oraciones y conviértete en un superhéroe de la gramática a través de experiencias de aprendizaje gamificadas.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-puzzle-piece"></i>
+                                    </div>
+                                    <h3>🧩 Rompecabezas de Práctica Inteligente</h3>
+                                    <p>Resuelve misterios gramaticales con rompecabezas generados por IA que se adaptan a tu nivel de habilidad. ¡Cada respuesta correcta desbloquea nuevos desafíos y recompensas!</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <h3>📈 Análisis de Progreso</h3>
+                                    <p>Observa cómo se disparan tus habilidades gramaticales con visualizaciones hermosas y conocimientos detallados sobre tu viaje de aprendizaje.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="vocabulary" class="tab-pane">
+                            <div class="feature-grid">
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-memory"></i>
+                                    </div>
+                                    <h3>🧠 Constructor de Palacio de la Memoria</h3>
+                                    <p>Crea asociaciones de palabras inolvidables utilizando técnicas de memoria avanzadas. ¡Convierte el aprendizaje de vocabulario en una épica aventura mental!</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-globe-americas"></i>
+                                    </div>
+                                    <h3>🌍 Explorador de Palabras del Mundo Real</h3>
+                                    <p>Descubre palabras en su hábitat natural a través de noticias, redes sociales, películas y conversaciones de todo el mundo.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-gamepad"></i>
+                                    </div>
+                                    <h3>🎮 Arena de Batalla de Palabras</h3>
+                                    <p>¡Desafía a tus amigos en épicas batallas de vocabulario! Colecciona palabras raras, construye tu colección y escala las tablas de clasificación.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="speaking" class="tab-pane">
+                            <div class="feature-grid">
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-robot"></i>
+                                    </div>
+                                    <h3>🤖 Compañero de Conversación con IA</h3>
+                                    <p>Chatea con Emma, tu compañera de speaking con IA que nunca juzga y siempre anima. ¡Practica en cualquier momento y lugar con retroalimentación instantánea de pronunciación!</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <h3>👥 Círculos de Conversación Globales</h3>
+                                    <p>¡Únete a salas de conversación en vivo con estudiantes de todo el mundo! Practica en debates temáticos, intercambios culturales y divertidos desafíos de speaking.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-trophy"></i>
+                                    </div>
+                                    <h3>🏆 Desafíos de Speaking</h3>
+                                    <p>¡Acepta misiones de speaking diarias! Desde trabalenguas hasta maratones de narración de historias, gana insignias y aumenta tu confianza.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="writing" class="tab-pane">
+                            <div class="feature-grid">
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-pen-nib"></i>
+                                    </div>
+                                    <h3>✍️ Estudio de Escritura Creativa</h3>
+                                    <p>¡Libera tu imaginación! Escribe historias, poemas y ensayos con sugerencias impulsadas por IA y mejoras de estilo instantáneas.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-user-edit"></i>
+                                    </div>
+                                    <h3>👨‍🏫 Coach de Escritura Personal</h3>
+                                    <p>Obtén comentarios detallados de profesores expertos y asistentes de IA. ¡Observa cómo tu escritura se transforma de buena a extraordinaria!</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-scroll"></i>
+                                    </div>
+                                    <h3>📜 Biblioteca de Plantillas de Escritura</h3>
+                                    <p>¡Domina cada estilo de escritura con nuestro tesoro de plantillas: correos electrónicos, ensayos, historias, informes y piezas creativas!</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="listening" class="tab-pane">
+                            <div class="feature-grid">
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-podcast"></i>
+                                    </div>
+                                    <h3>🎧 Biblioteca de Aventuras Auditivas</h3>
+                                    <p>¡Sumérgete en un mundo de podcasts, audiolibros, entrevistas e historias! Desde cuentos de hadas para principiantes hasta documentales avanzados.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-closed-captioning"></i>
+                                    </div>
+                                    <h3>📺 Sistema Inteligente de Subtítulos</h3>
+                                    <p>Subtítulos interactivos que puedes hacer clic, pausar y repetir. ¡Cada palabra se convierte en una oportunidad de aprendizaje!</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-ear-listen"></i>
+                                    </div>
+                                    <h3>🌍 Entrenamiento de Dominio de Acentos</h3>
+                                    <p>¡Entrena tu oído para entender acentos británicos, americanos, australianos y otros acentos en inglés a través de divertidos juegos de listening!</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Aprobé el First Certificate con notable alto gracias a la preparación de English Vision. Las clases son dinámicas y muy prácticas."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="assets/testimonial-2.jpg" alt="Javier Martínez">
-                        <div>
-                            <h4>Javier Martínez</h4>
-                            <p>Estudiante FCE</p>
+            </div>
+        </section>
+
+        <!-- Levels Section -->
+        <section class="tabs-section" id="levels">
+            <div class="container">
+                <h2 class="section-title">🎯 Elige Tu Camino en el Inglés</h2>
+                <p class="section-subtitle">Programas adaptados a tu edad y nivel: desde los primeros pasos hasta el dominio total.</p>
+                
+                <div class="level-cards">
+                    
+                    <!-- Kids -->
+                    <div class="level-card">
+                        <div class="level-header">
+                            <div class="level-title">🌟 Exploradores Niños</div>
+                            <div class="level-subtitle">A1-A2 (5-11 años)</div>
+                        </div>
+                        <div class="level-body">
+                            <p>Clases divertidas y dinámicas para que los más pequeños aprendan jugando y pierdan el miedo al inglés.</p>
+                            <ul>
+                                <li>Historias, canciones y juegos interactivos</li>
+                                <li>Aprendizaje de vocabulario básico y expresiones cotidianas</li>
+                                <li>Introducción natural a la lectura y escritura</li>
+                                <li>Refuerzo de pronunciación con actividades orales</li>
+                                <li>Desarrollo de confianza y motivación temprana</li>
+                            </ul>
                         </div>
                     </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Las clases para adultos son perfectas para compaginar con el trabajo. He ganado mucha confianza para hablar en inglés en reuniones."</p>
+                    
+                    <!-- Teens -->
+                    <div class="level-card">
+                        <div class="level-header">
+                            <div class="level-title">⚡ Navegantes Jóvenes</div>
+                            <div class="level-subtitle">B1-B2 (12-17 años)</div>
+                        </div>
+                        <div class="level-body">
+                            <p>Un impulso académico y social con inglés práctico y retos que preparan para exámenes y el futuro.</p>
+                            <ul>
+                                <li>Práctica intensiva de speaking en grupos</li>
+                                <li>Lectura y análisis de textos más complejos</li>
+                                <li>Preparación para exámenes oficiales (PET, FCE)</li>
+                                <li>Escritura de ensayos y presentaciones escolares</li>
+                                <li>Actividades enfocadas en confianza y fluidez real</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="testimonial-author">
-                        <img src="assets/testimonial-3.jpg" alt="Elena García">
-                        <div>
-                            <h4>Elena García</h4>
-                            <p>Estudiante adultos</p>
+                    
+                    <!-- Adults -->
+                    <div class="level-card">
+                        <div class="level-header">
+                            <div class="level-title">🚀 Campeones Adultos</div>
+                            <div class="level-subtitle">C1-C2 (18+ años)</div>
+                        </div>
+                        <div class="level-body">
+                            <p>Inglés para destacar en tu vida profesional, académica o personal. Logra comunicarte con seguridad en cualquier entorno.</p>
+                            <ul>
+                                <li>Inglés para el trabajo, entrevistas y negocios</li>
+                                <li>Dominio de 5000+ palabras avanzadas</li>
+                                <li>Práctica de debates y presentaciones</li>
+                                <li>Inglés académico y preparación para certificaciones</li>
+                                <li>Fluidez y naturalidad casi nativa</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>¿Listo para comenzar tu aventura con el inglés?</h2>
-                <p>Reserva ahora tu clase de prueba gratuita y descubre nuestro método.</p>
-                <div class="cta-buttons">
-                    <a href="contact.html" class="btn btn-primary">Reserva tu clase gratis</a>
-                    <a href="https://wa.me/34600000000" class="btn btn-secondary">Habla con nosotros</a>
+        <!-- NEW: Blog Section -->
+        <section class="blog-section" id="blog">
+            <div class="container">
+                <h2 class="section-title">📚 Blog de English Vision</h2>
+                <p class="section-subtitle">Consejos, recursos y artículos para mejorar tu inglés en Vigo</p>
+                
+                <div class="blog-grid">
+                    <!-- Blog Post 1 -->
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div class="blog-content">
+                            <h3>5 Frases en Inglés para Turistas en Galicia</h3>
+                            <p>Si estás en Vigo y quieres ayudar a los turistas angloparlantes que visitan nuestra hermosa Galicia, estas frases te serán de gran utilidad. Galicia atrae a miles de visitantes cada año, especialmente a las Rías Baixas y las Islas Cíes, por lo que conocer algunas frases clave en inglés puede hacer la diferencia...</p>
+                            <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Post 2 -->
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <i class="fas fa-comment-slash"></i>
+                        </div>
+                        <div class="blog-content">
+                            <h3>Errores Comunes que Cometen los Hispanohablantes</h3>
+                            <p>Como profesor de inglés en Vigo, he notado que los estudiantes españoles suelen cometer los mismos errores una y otra vez. Estos errores generalmente provienen de la interferencia del español y de las diferencias estructurales entre ambos idiomas. Aquí te presento los errores más comunes y cómo evitarlos...</p>
+                            <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Post 3 -->
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <div class="blog-content">
+                            <h3>Beneficios de Aprender Inglés desde Joven</h3>
+                            <p>En English Vision Vigo, siempre recomendamos que los niños comiencen a aprender inglés desde una edad temprana. Los estudios demuestran que los niños que aprenden un segundo idioma antes de la adolescencia tienen más probabilidades de alcanzar una fluidez similar a la nativa. Aquí te explicamos por qué...</p>
+                            <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Post 4 -->
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <i class="fas fa-house-user"></i>
+                        </div>
+                        <div class="blog-content">
+                            <h3>Cómo Practicar Inglés en Casa</h3>
+                            <p>Vivir en Vigo no significa que necesites estar siempre en una academia para mejorar tu inglés. Existen muchas formas efectivas de practicar desde la comodidad de tu hogar. Aquí te presentamos algunas estrategias probadas que nuestros estudiantes en Vigo han utilizado con éxito para mejorar su inglés sin salir de casa...</p>
+                            <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Post 5 -->
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <div class="blog-content">
+                            <h3>Series y Películas para Mejorar tu Inglés</h3>
+                            <p>Una de las formas más divertidas de mejorar tu inglés es mediante el visionado de series y películas en versión original. En Vigo tenemos acceso a múltiples plataformas de streaming que nos permiten disfrutar de contenido en inglés con subtítulos. Te recomendamos las mejores series según tu nivel...</p>
+                            <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="assets/logo.png" alt="English Vision Logo">
-                            <span>English Vision</span>
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <h2 class="section-title">📞 Ponte en Contacto</h2>
+                <p class="section-subtitle">Estamos aquí para ayudarte en tu viaje de aprendizaje de inglés</p>
+                
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3>WhatsApp</h3>
+                        <p>Chatea con nosotros directamente por WhatsApp para respuestas rápidas a tus preguntas.</p>
+                        <p><strong>+34 123 456 789</strong></p>
+                        <a href="https://wa.me/34123456789" class="whatsapp-button">
+                            <i class="fab fa-whatsapp"></i>
+                            Enviar mensaje
                         </a>
                     </div>
-                    <p>La mejor academia de inglés para niños, jóvenes y adultos. Preparación de exámenes Cambridge.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><span>FB</span></a>
-                        <a href="#" aria-label="Instagram"><span>IG</span></a>
-                        <a href="#" aria-label="Twitter"><span>TW</span></a>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>Envíanos un correo electrónico y te responderemos en un plazo de 24 horas.</p>
+                        <p><strong>info@englishvision.es</strong></p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Teléfono</h3>
+                        <p>Llámanos de lunes a viernes de 9:00 a 18:00 para hablar con nuestro equipo.</p>
+                        <p><strong>+34 123 456 789</strong></p>
                     </div>
                 </div>
-                <div class="footer-col">
-                    <h3>Cursos</h3>
-                    <ul>
-                        <li><a href="cursos/ninos.html">Inglés para Niños</a></li>
-                        <li><a href="cursos/jovenes.html">Inglés para Jóvenes</a></li>
-                        <li><a href="cursos/adultos.html">Inglés para Adultos</a></li>
-                        <li><a href="cursos/jovenes.html">Preparación Cambridge</a></li>
-                    </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌟 English Vision</h3>
+                    <p>Empoderando a millones de estudiantes en todo el mundo para dominar el inglés a través de experiencias de aprendizaje revolucionarias, divertidas e interactivas que hacen del aprendizaje de idiomas una aventura.</p>
                 </div>
-                <div class="footer-col">
-                    <h3>Enlaces</h3>
-                    <ul>
-                        <li><a href="about.html">Sobre nosotros</a></li>
-                        <li><a href="metodo.html">Nuestro método</a></li>
-                        <li><a href="noticias.html">Noticias</a></li>
-                        <li><a href="contact.html">Contacto</a></li>
-                    </ul>
+                <div class="footer-section">
+                    <h3>🚀 Inicio Rápido</h3>
+                    <a href="#home">Inicio</a>
+                    <a href="#courses">Aventuras de Aprendizaje</a>
+                    <a href="#levels">Elige Tu Nivel</a>
+                    <a href="#blog">Blog</a> <!-- Updated: Changed from Práctica to Blog -->
                 </div>
-                <div class="footer-col">
-                    <h3>Contacto</h3>
-                    <ul>
-                        <li>📍 Calle Ejemplo, 123, Ciudad</li>
-                        <li>📞 +34 600 000 000</li>
-                        <li>✉️ info@englishvision.es</li>
-                        <li><a href="https://wa.me/34600000000" class="whatsapp-link">💬 WhatsApp</a></li>
-                    </ul>
+                <div class="footer-section">
+                    <h3>💬 Centro de Soporte</h3>
+                    <a href="#contact">Contactar Héroes</a>
+                    <a href="#faq">FAQ Tesoro</a>
+                    <a href="#help">Centro de Ayuda</a>
+                    <a href="#community">Unirse a la Comunidad</a>
+                </div>
+                <div class="footer-section">
+                    <h3>🌐 Conectar y Compartir</h3>
+                    <a href="#"><i class="fab fa-facebook"></i> Comunidad de Facebook</a>
+                    <a href="#"><i class="fab fa-twitter"></i> Actualizaciones de Twitter</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Historias de Instagram</a>
+                    <a href="#"><i class="fab fa-youtube"></i> Canal de YouTube</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 English Vision. Todos los derechos reservados.</p>
+                <p>&copy; 2025 English Vision - Haciendo el Aprendizaje de Inglés Mágico ✨ | Política de Privacidad | Términos de Aventura</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/site.js"></script>
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Slideshow functionality
+        let slideIndex = 1;
+        showSlide(slideIndex);
+
+        function currentSlide(n) {
+            showSlide(slideIndex = n);
+        }
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.slide-dot');
+            
+            if (n > slides.length) { slideIndex = 1; }
+            if (n < 1) { slideIndex = slides.length; }
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[slideIndex - 1].classList.add('active');
+            dots[slideIndex - 1].classList.add('active');
+        }
+
+        // Auto-advance slideshow
+        setInterval(() => {
+            slideIndex++;
+            showSlide(slideIndex);
+        }, 4000);
+
+        // Tab functionality
+        function showTab(tabName) {
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            const tabButtons = document.querySelectorAll('.tab-button');
+            
+            tabPanes.forEach(pane => pane.classList.remove('active'));
+            tabButtons.forEach(button => button.classList.remove('active'));
+            
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.9)';
+                header.style.backdropFilter = 'blur(30px)';
+                header.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(20px)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-on-scroll');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.feature-card, .level-card, .section-title, .blog-card').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Button ripple effect
+        document.querySelectorAll('.cta-button, .tab-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.3);
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    transform: scale(0);
+                    animation: ripple 0.6s linear;
+                    pointer-events: none;
+                `;
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add ripple keyframes
+        const rippleStyle = document.createElement('style');
+        rippleStyle.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(rippleStyle);
+
+        // Initialize particles on load
+        window.addEventListener('load', () => {
+            createParticles();
+        });
+
+        // Add dynamic mouse following effect
+        document.addEventListener('mousemove', (e) => {
+            const cursor = document.querySelector('.cursor-glow') || (() => {
+                const cursor = document.createElement('div');
+                cursor.className = 'cursor-glow';
+                cursor.style.cssText = `
+                    position: fixed;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background: radial-gradient(circle, rgba(240,147,251,0.3) 0%, transparent 70%);
+                    pointer-events: none;
+                    z-index: 9999;
+                    transition: transform 0.1s ease;
+                `;
+                document.body.appendChild(cursor);
+                return cursor;
+            })();
+
+            cursor.style.left = e.clientX - 10 + 'px';
+            cursor.style.top = e.clientY - 10 + 'px';
+        });
+    </script>
 </body>
 </html>

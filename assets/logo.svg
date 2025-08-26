@@ -1,5 +1,0 @@
-<!-- assets/logo.svg - simple mark; replace with real logo if available -->
-<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-  <rect width="200" height="200" rx="30" fill="#2b7cff"></rect>
-  <text x="100" y="120" font-family="Open Sans, Arial" font-weight="700" font-size="72" fill="#ffffff" text-anchor="middle">EV</text>
-</svg>
