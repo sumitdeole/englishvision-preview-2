@@ -1328,6 +1328,7 @@
                     <div class="blog-content">
                         <h3>5 Frases en Inglés para Turistas en Galicia</h3>
                         <p>Descubre las frases más útiles en inglés para turistas que visitan Galicia. Aprende a dar direcciones, recomendar restaurantes y más.</p>
+                        <!-- Change href to # and add data-blog attribute -->
                         <a href="#" class="read-more" data-blog="blog1">Leer más <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -1338,7 +1339,7 @@
                     <div class="blog-content">
                             <h3>Errores Comunes que Cometen los Hispanohablantes</h3>
                             <p>Como profesor de inglés en Vigo, he notado que los estudiantes españoles suelen cometer los mismos errores una y otra vez. Estos errores generalmente provienen de la interferencia del español y de las diferencias estructurales entre ambos idiomas. Aquí te presento los errores más comunes y cómo evitarlos...</p>
-                            <a href="#" class="read-more" data-blog="blog2">Leer más <i class="fas fa-arrow-right"></i></a>
+                            <a href="#" class="read-more" data-file="blog2">Leer más <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                     <div class="blog-card">
@@ -1348,7 +1349,7 @@
                     <div class="blog-content">
                             <h3>Series y Películas para Mejorar tu Inglés</h3>
                             <p>Una de las formas más divertidas de mejorar tu inglés es mediante el visionado de series y películas en versión original. En Vigo tenemos acceso a múltiples plataformas de streaming que nos permiten disfrutar de contenido en inglés con subtítulos. Te recomendamos las mejores series según tu nivel...</p>
-                            <a href="#" class="read-more" data-blog="blog5">Leer más <i class="fas fa-arrow-right"></i></a>
+                            <a href="#" class="read-more" data-file="blog5">Leer más <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -1359,7 +1360,7 @@
                     <div class="blog-content">
                             <h3>Cómo Practicar Inglés en Casa</h3>
                             <p>Vivir en Vigo no significa que necesites estar siempre en una academia para mejorar tu inglés. Existen muchas formas efectivas de practicar desde la comodidad de tu hogar. Aquí te presentamos algunas estrategias probadas que nuestros estudiantes en Vigo han utilizado con éxito para mejorar su inglés sin salir de casa...</p>
-                            <a href="#" class="read-more" data-blog="blog4">Leer más <i class="fas fa-arrow-right"></i></a>
+                            <a href="#" class="read-more" data-file="blog4">Leer más <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -1370,7 +1371,7 @@
                     <div class="blog-content">
                             <h3>Beneficios de Aprender Inglés desde Joven</h3>
                             <p>En English Vision Vigo, siempre recomendamos que los niños comiencen a aprender inglés desde una edad temprana. Los estudios demuestran que los niños que aprenden un segundo idioma antes de la adolescencia tienen más probabilidades de alcanzar una fluidez similar a la nativa. Aquí te explicamos por qué...</p>
-                            <a href="#" class="read-more" data-blog="blog3">Leer más <i class="fas fa-arrow-right"></i></a>
+                            <a href="#" class="read-more" data-file="blog3">Leer más <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                     
@@ -1627,6 +1628,8 @@
             cursor.style.left = e.clientX - 10 + 'px';
             cursor.style.top = e.clientY - 10 + 'px';
         });
+    </script>
+    <!-- Blog Modal -->
     <div id="blogModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" id="closeModal">&times;</span>
@@ -1643,6 +1646,7 @@
             </div>
         </div>
     </div>
+<script>
         // DOM elements
         const modal = document.getElementById('blogModal');
         const closeModalBtn = document.getElementById('closeModal');
