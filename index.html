@@ -887,6 +887,120 @@
         .animate-on-scroll {
             animation: fadeInUp 0.8s ease-out forwards;
         }
+                /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 25px;
+            max-width: 800px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            position: relative;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transform: translateY(-50px);
+            transition: transform 0.5s ease;
+        }
+
+        .modal.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .close-modal:hover {
+            color: #fdbb2d;
+            transform: rotate(90deg);
+        }
+
+        .modal-header {
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .modal-title {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .modal-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #fdbb2d;
+        }
+
+        .modal-body {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .modal-body p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .modal-body h4 {
+            margin: 25px 0 15px;
+            color: #fdbb2d;
+            font-size: 1.4rem;
+        }
+
+        .modal-body ul {
+            margin-left: 30px;
+            margin-bottom: 25px;
+        }
+
+        .modal-body li {
+            margin-bottom: 10px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                padding: 25px;
+                margin: 20px;
+            }
+            
+            .modal-title {
+                font-size: 1.8rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1200,73 +1314,67 @@
         </section>
 
         <!-- NEW: Blog Section -->
-        <section class="blog-section" id="blog">
-            <div class="container">
-                <h2 class="section-title">📚 Blog de English Vision</h2>
-                <p class="section-subtitle">Consejos, recursos y artículos para mejorar tu inglés en Vigo</p>
-                
-                <div class="blog-grid">
-                    <!-- Blog Post 1 -->
-                    <div class="blog-card">
-                        <div class="blog-image">
-                            <i class="fas fa-map-marked-alt"></i>
-                        </div>
-                        <div class="blog-content">
-                            <h3>5 Frases en Inglés para Turistas en Galicia</h3>
-                            <p>Si estás en Vigo y quieres ayudar a los turistas angloparlantes que visitan nuestra hermosa Galicia, estas frases te serán de gran utilidad. Galicia atrae a miles de visitantes cada año, especialmente a las Rías Baixas y las Islas Cíes, por lo que conocer algunas frases clave en inglés puede hacer la diferencia...</p>
-                            <a href="#" class="read-more" data-file="blogs/blog1.html">Leer más <i class="fas fa-arrow-right"></i></a>
-
-
-                        </div>
+    <section class="blog-section" id="blog">
+        <div class="container">
+            <h2 class="section-title">📚 Blog de English Vision</h2>
+            <p class="section-subtitle">Consejos, recursos y artículos para mejorar tu inglés en Vigo</p>
+            
+            <div class="blog-grid">
+                <!-- Blog Post 1 - Update the data-blog attribute -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-map-marked-alt"></i>
                     </div>
-                    
-                    <!-- Blog Post 2 -->
-                    <div class="blog-card">
-                        <div class="blog-image">
-                            <i class="fas fa-comment-slash"></i>
-                        </div>
-                        <div class="blog-content">
+                    <div class="blog-content">
+                        <h3>5 Frases en Inglés para Turistas en Galicia</h3>
+                        <p>Descubre las frases más útiles en inglés para turistas que visitan Galicia. Aprende a dar direcciones, recomendar restaurantes y más.</p>
+                        <!-- Change href to # and add data-blog attribute -->
+                        <a href="#" class="read-more" data-blog="blog1">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="blog-content">
                             <h3>Errores Comunes que Cometen los Hispanohablantes</h3>
                             <p>Como profesor de inglés en Vigo, he notado que los estudiantes españoles suelen cometer los mismos errores una y otra vez. Estos errores generalmente provienen de la interferencia del español y de las diferencias estructurales entre ambos idiomas. Aquí te presento los errores más comunes y cómo evitarlos...</p>
-                            <a href="#" class="read-more" data-file="blogs/blog2.html">Leer más <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                            <a href="#" class="read-more" data-file="blog2">Leer más <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    
-                    <!-- Blog Post 3 -->
+                </div>
                     <div class="blog-card">
-                        <div class="blog-image">
-                            <i class="fas fa-child"></i>
-                        </div>
-                        <div class="blog-content">
-                            <h3>Beneficios de Aprender Inglés desde Joven</h3>
-                            <p>En English Vision Vigo, siempre recomendamos que los niños comiencen a aprender inglés desde una edad temprana. Los estudios demuestran que los niños que aprenden un segundo idioma antes de la adolescencia tienen más probabilidades de alcanzar una fluidez similar a la nativa. Aquí te explicamos por qué...</p>
-                            <a href="#" class="read-more" data-file="blogs/blog3.html">Leer más <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                    <div class="blog-image">
+                        <i class="fas fa-map-marked-alt"></i>
                     </div>
-                    
-                    <!-- Blog Post 4 -->
-                    <div class="blog-card">
-                        <div class="blog-image">
-                            <i class="fas fa-house-user"></i>
-                        </div>
-                        <div class="blog-content">
-                            <h3>Cómo Practicar Inglés en Casa</h3>
-                            <p>Vivir en Vigo no significa que necesites estar siempre en una academia para mejorar tu inglés. Existen muchas formas efectivas de practicar desde la comodidad de tu hogar. Aquí te presentamos algunas estrategias probadas que nuestros estudiantes en Vigo han utilizado con éxito para mejorar su inglés sin salir de casa...</p>
-                            <a href="#" class="read-more" data-file="blogs/blog4.html">Leer más <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    
-                    <!-- Blog Post 5 -->
-                    <div class="blog-card">
-                        <div class="blog-image">
-                            <i class="fas fa-film"></i>
-                        </div>
-                        <div class="blog-content">
+                    <div class="blog-content">
                             <h3>Series y Películas para Mejorar tu Inglés</h3>
                             <p>Una de las formas más divertidas de mejorar tu inglés es mediante el visionado de series y películas en versión original. En Vigo tenemos acceso a múltiples plataformas de streaming que nos permiten disfrutar de contenido en inglés con subtítulos. Te recomendamos las mejores series según tu nivel...</p>
-                            <a href="#" class="read-more" data-file="blogs/blog5.html">Leer más <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                            <a href="#" class="read-more" data-file="blog5">Leer más <i class="fas fa-arrow-right"></i></a>
                     </div>
+                </div>
+
+                                <div class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="blog-content">
+                            <h3>Cómo Practicar Inglés en Casa</h3>
+                            <p>Vivir en Vigo no significa que necesites estar siempre en una academia para mejorar tu inglés. Existen muchas formas efectivas de practicar desde la comodidad de tu hogar. Aquí te presentamos algunas estrategias probadas que nuestros estudiantes en Vigo han utilizado con éxito para mejorar su inglés sin salir de casa...</p>
+                            <a href="#" class="read-more" data-file="blog4">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="blog-content">
+                            <h3>Beneficios de Aprender Inglés desde Joven</h3>
+                            <p>En English Vision Vigo, siempre recomendamos que los niños comiencen a aprender inglés desde una edad temprana. Los estudios demuestran que los niños que aprenden un segundo idioma antes de la adolescencia tienen más probabilidades de alcanzar una fluidez similar a la nativa. Aquí te explicamos por qué...</p>
+                            <a href="#" class="read-more" data-file="blog3">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                    
                 </div>
             </div>
         </section>
@@ -1519,6 +1627,152 @@
 
             cursor.style.left = e.clientX - 10 + 'px';
             cursor.style.top = e.clientY - 10 + 'px';
+        });
+    </script>
+    <!-- Blog Modal -->
+    <div id="blogModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <div class="modal-header">
+                <div class="modal-icon" id="modalIcon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h2 class="modal-title" id="modalTitle">Cargando...</h2>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <div class="loading">
+                    <i class="fas fa-spinner fa-spin"></i> Cargando contenido...
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+        // DOM elements
+        const modal = document.getElementById('blogModal');
+        const closeModalBtn = document.getElementById('closeModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalIcon = document.getElementById('modalIcon');
+        const modalBody = document.getElementById('modalBody');
+        const readMoreButtons = document.querySelectorAll('.read-more');
+
+        // Icon mapping for different blog posts
+        const iconMap = {
+            'blog1': 'map-marked-alt',
+            'blog2': 'comment-slash',
+            'blog3': 'child',
+            'blog4': 'house-user',
+            'blog5': 'film'
+        };
+
+        // Blog content - you can move this to separate files later
+        const blogContent = {
+            'blog1': {
+                title: "5 Frases en Inglés para Turistas en Galicia",
+                content: `
+                    <p>Galicia es un destino turístico increíble, y muchos visitantes internacionales necesitan comunicarse en inglés. Aquí tienes las frases más útiles para ayudar a turistas en la región:</p>
+                    
+                    <h4>1. Dar direcciones</h4>
+                    <p>"Go straight ahead until you see the cathedral, then turn left." (Ve recto hasta que veas la catedral, luego gira a la izquierda).</p>
+                    
+                    <h4>2. Recomendar restaurantes</h4>
+                    <p>"I recommend trying the pulpo á feira at this restaurant." (Te recomiendo probar el pulpo á feira en este restaurante).</p>
+                    
+                    <h4>3. Hablar sobre el clima</h4>
+                    <p>"In Galicia, we often have mild temperatures but frequent rain, so always carry an umbrella." (En Galicia, often tenemos temperaturas suaves pero lluvias frecuentes, así que siempre lleva paraguas).</p>
+                    
+                    <h4>4. Explicar tradiciones</h4>
+                    <p>"The Santiago de Compostela Pilgrimage is a world-famous tradition where walkers from all over the world come to our region." (El Peregrinaje de Santiago de Compostela es una tradición mundialmente famosa donde caminantes de todo el mundo vienen a nuestra región).</p>
+                    
+                    <h4>5. Transporte público</h4>
+                    <p>"You can take bus number 6 to get to the city center. The stop is just around the corner." (Puedes tomar el autobús número 6 para llegar al centro de la ciudad. La parada está justo a la vuelta de la esquina).</p>
+                `
+            },
+            'blog2': {
+                title: "Errores Comunes que Cometen los Hispanohablantes",
+                content: `
+                    <p>Al aprender inglés, los hispanohablantes tendemos a cometer ciertos errores debido a las diferencias entre ambos idiomas. Identificarlos es el primer paso para corregirlos:</p>
+                    
+                    <h4>1. False friends (Falsos amigos)</h4>
+                    <p>Palabras que suenan similar pero significan cosas diferentes. Por ejemplo:
+                    <ul>
+                        <li>"Actually" no significa "actualmente" sino "en realidad"</li>
+                        <li>"Embarrassed" no significa "embarazada" sino "avergonzado"</li>
+                        <li>"Library" no significa "librería" sino "biblioteca"</li>
+                    </ul>
+                    </p>
+                    
+                    <h4>2. Omisión del sujeto</h4>
+                    <p>En español podemos omitir el sujeto, pero en inglés es obligatorio:
+                    <br>"Es importante" → <strong>"It is important"</strong> (no solo "Is important")
+                    </p>
+                `
+            },
+            // Add content for other blogs here
+        };
+
+        // Open modal with blog content
+        function openModal(blogId) {
+            // Show modal with loading state
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Set icon based on blog post
+            const iconName = iconMap[blogId] || 'file-alt';
+            modalIcon.innerHTML = `<i class="fas fa-${iconName}"></i>`;
+            
+            // Load blog content
+            loadBlogContent(blogId);
+        }
+
+        // Close modal
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            
+            // Reset modal content after transition
+            setTimeout(() => {
+                modalTitle.textContent = 'Cargando...';
+                modalBody.innerHTML = '<div class="loading"><i class="fas fa-spinner fa-spin"></i> Cargando contenido...</div>';
+            }, 300);
+        }
+
+        // Load blog content
+        function loadBlogContent(blogId) {
+            // Simulate loading delay
+            setTimeout(() => {
+                if (blogContent[blogId]) {
+                    modalTitle.textContent = blogContent[blogId].title;
+                    modalBody.innerHTML = blogContent[blogId].content;
+                } else {
+                    modalTitle.textContent = "Blog no encontrado";
+                    modalBody.innerHTML = "<p>El contenido solicitado no está disponible en este momento.</p>";
+                }
+            }, 800);
+        }
+
+        // Event listeners
+        readMoreButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const blogId = button.getAttribute('data-blog');
+                openModal(blogId);
+            });
+        });
+
+        closeModalBtn.addEventListener('click', closeModal);
+
+        // Close modal when clicking outside content
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Close with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
         });
     </script>
 </body>
